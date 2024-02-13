@@ -18,54 +18,53 @@ const lastName = ' Rodríguez';
 console.log(firstName + lastName);
 // 6. Crea una función que imprima por consola el string 'Hello World'.
 function sayHello() {
-  console.log('Hello World');
+  return 'Hello World';
 }
-sayHello();
+console.log(sayHello());
 // 7. Crea una función que, al ser llamada, imprima por consola el resultado de la multiplicación de dos números introducidos como parámetros.
 function multiply() {
-  console.log(c * d);
+  return c * d;
 }
-multiply();
+console.log(multiply());
 // 8. Crea una función que imprima por consola el resultado de elevar al cubo un número dado como parámetro.
-function square(num) {
-  console.log(num * num);
+function cube(num) {
+  return num ** 3;
 }
-square(4);
+console.log(cube(4));
 // 9. Crea una función que saque por consola el área de un rectángulo de dimensiones dadas como parámetro.
-function calculateRectangleArea(height, width) {
-  console.log(height * width);
+function calcRectangleArea(height, width) {
+  return height * width;
 }
-calculateRectangleArea(3, 4);
+console.log(calcRectangleArea(3, 4));
 // 10. Crea una función que imprima por consola un número al azar entre 0 y 10.
 function getRandomNumber() {
-  console.log(Math.floor(Math.random() * 10));
+  return Math.trunc(Math.random() * 11);
 }
-getRandomNumber();
+console.log(getRandomNumber());
 // 11. Adivina el número: Crea una función que primero guarde en una variable un número aleatorio del 1 al 10. Después, pregunte al usuario a través de un prompt un número del 1 al 10. Una vez recibida la respuesta, compare estos dos números. Si los números coinciden, imprime por consola un string indicando que el usuario ha acertado, sino, imprime por consola que el usuario ha fallado seguido del número correcto.
 function guessRandomNumber() {
-  const randomNumber = Math.floor(Math.random() * 10);
+  const randomNumber = Math.trunc(Math.random() * 10 + 1);
   let num = prompt('Introduce un número del 1 al 10');
   if (num === randomNumber) {
-    console.log('Felicidades! Has acertado.');
-  } else {
-    console.log('Lo sentimos :(. No has acertado.');
+    return 'Felicidades! Has acertado.';
   }
+  return 'Lo sentimos :(. No has acertado.';
 }
-guessRandomNumber();
+console.log(guessRandomNumber());
 // 12. Crea una función que reciba un número como parámetro e imprima por consola si el número dado es par o impar.
 function isOddOrEven(num) {
-  if (num % 2 === 0) {
-    console.log('El número es par');
-  } else {
-    console.log('El número es impar');
+  if (num % 2) {
+    return 'El número es impar';
   }
+  return 'El número es par';
 }
-isOddOrEven(3);
+console.log(isOddOrEven(3));
 // 13. Crea una función que reciba un parámetro de tipo string e imprima por consola el string revertido. (ejemplo: 'casa' => 'asac).
 function reverseString(word) {
-  console.log(word.reverse());
+  const changedString = word.split('').reverse().join('');
+  return changedString;
 }
-reverseString('Palmera');
+console.log(reverseString('Palmera'));
 // 14. Crea una función que devuelva la tabla de multiplicar de un número introducido como parámetro.
 // LLama a la función desde console.log() para que el resultado se imprima por consola
 function printMultiplicationTable(num) {
